@@ -1,282 +1,259 @@
 # Figma Plugin Development — AI Agent Reference
 
 **Last updated:** April 16, 2026  
-**Scope:** Building Figma presentation decks via custom local plugins (code.js + manifest.json)  
-**Source:** Lessons from building the 24 Tattoos pitch dossier (April 2026)
+**Scope:** Process for building Figma presentations via custom local plugins
 
 ---
 
-## Plugin Architecture
+## Overview
 
-A Figma local plugin consists of two files in the same directory:
+A Figma local plugin generates an entire presentation programmatically. The agent writes `code.js`, which is imported and run inside the Figma desktop app. The plugin creates frames, text, shapes, and placeholders from scratch.
+
+**Key constraint:** The plugin runs in Figma's sandbox. No DOM, no `fetch`, no Node.js APIs, no external image loading.
+
+---
+
+## Plugin File Structure
 
 ```
-figma-plugin/
-├── manifest.json    # Plugin metadata
-└── code.js          # Plugin logic — runs in Figma's sandbox
+plugin-folder/
+├── manifest.json
+└── code.js
 ```
 
-**manifest.json minimum structure:**
+**manifest.json:**
 ```json
 {
   "name": "Plugin Name",
-  "id": "unique-id-string",
+  "id": "unique-string",
   "api": "1.0.0",
   "main": "code.js"
 }
 ```
 
-**code.js** runs in Figma's plugin sandbox. It has access to the `figma` global object. It does NOT have access to the DOM, `fetch`, `fs`, or any Node.js APIs.
+**code.js** has access to the `figma` global object only.
 
 ---
 
-## Figma Plugin API — Core Methods
+## Core API Reference
 
-### Create a frame (slide)
-```js
-const frame = figma.createFrame();
-frame.resize(W, H);
-frame.name = "01 — Cover";
-frame.fills = [{ type: 'SOLID', color: { r: 0.08, g: 0.05, b: 0.04 } }];
-figma.currentPage.appendChild(frame);
-```
-
-### Create a text node
-```js
-const txt = figma.createText();
-await figma.loadFontAsync({ family: "Inter", style: "Bold" });
-txt.fontName = { family: "Inter", style: "Bold" };
-txt.fontSize = 48;
-txt.characters = "Your text here";
-txt.fills = [{ type: 'SOLID', color: { r: 1, g: 0.84, b: 0.39 } }];
-txt.x = 80;
-txt.y = 200;
-frame.appendChild(txt);
-```
-
-**Critical:** `figma.loadFontAsync()` must be awaited before setting `fontName` or `characters`. The entire plugin must be wrapped in an `async` IIFE or the main function must be async.
-
-### Create a rectangle
-```js
-const rect = figma.createRectangle();
-rect.resize(W * 0.42, H);
-rect.x = 0;
-rect.y = 0;
-rect.fills = [{ type: 'SOLID', color: { r: 0.12, g: 0.08, b: 0.06 } }];
-frame.appendChild(rect);
-```
-
-### Create an ellipse (for orbs/atmosphere)
-```js
-const orb = figma.createEllipse();
-orb.resize(600, 600);
-orb.x = W - 500;
-orb.y = -100;
-orb.fills = [{ type: 'SOLID', color: { r: 0.83, g: 0.32, b: 0.04 }, opacity: 0.15 }];
-frame.appendChild(orb);
-```
-
-### Create an image placeholder
-```js
-const ph = figma.createRectangle();
-ph.resize(W * 0.42, H);
-ph.x = 0;
-ph.y = 0;
-ph.fills = [{ type: 'SOLID', color: { r: 0.2, g: 0.12, b: 0.08 } }];
-ph.strokes = [{ type: 'SOLID', color: { r: 0.83, g: 0.64, b: 0.24 } }];
-ph.strokeWeight = 2;
-ph.dashPattern = [8, 6];
-// Add label
-const label = figma.createText();
-await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-label.characters = "[Image: Description of what goes here]";
-label.fontSize = 14;
-label.fills = [{ type: 'SOLID', color: { r: 0.83, g: 0.64, b: 0.24 } }];
-label.x = ph.x + 20;
-label.y = ph.y + H/2;
-frame.appendChild(ph);
-frame.appendChild(label);
-```
-
----
-
-## Common Type Errors — Critical
-
-These bugs cause Figma to throw errors during plugin execution:
-
-### Error: Expected number, got object
-**Cause:** Passing an object `{x, y}` where a number is expected, or passing a calculation result into an argument that expects a coordinate pair.
-
-**Example of the bug:**
-```js
-// WRONG — passing W*0.68 as the content argument
-addText(frame, W*0.68, someText, 20, 200);
-
-// CORRECT — W*0.68 is the width, not the content
-addText(frame, someText, W*0.68, 20, 200);
-```
-
-**Prevention:** Always check the argument order of any helper function before calling it. If you define `function addText(parent, content, width, x, y)`, content comes before width.
-
-### Error: Cannot set property on read-only object
-**Cause:** Trying to set properties on a node after it's been closed or on a native object.
-
-### Error: Font not loaded
-**Cause:** Setting `fontName` or `characters` before `loadFontAsync` resolves.
-
-**Prevention:** Load all fonts at the top of the plugin before any slide creation:
+### Plugin entry point
 ```js
 async function buildDeck() {
-  await figma.loadFontAsync({ family: "Playfair Display", style: "Bold" });
+  // Load all fonts before any text operations
   await figma.loadFontAsync({ family: "Inter", style: "Regular" });
   await figma.loadFontAsync({ family: "Inter", style: "Bold" });
-  // ... build slides
+
+  // Build slides here
+
   figma.closePlugin();
 }
 buildDeck();
 ```
 
+**Rule:** The main function must be `async`. All font loads must be awaited before any text node is created or modified.
+
 ---
 
-## Slide Structure Pattern
+### Create a frame (slide)
+```js
+const slide = figma.createFrame();
+slide.resize(W, H);
+slide.name = "01 — Slide Name";
+slide.fills = [{ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }];
+figma.currentPage.appendChild(slide);
+```
 
-Each slide should follow this pattern:
+### Create a text node
+```js
+const txt = figma.createText();
+txt.fontName = { family: "Inter", style: "Bold" };
+txt.fontSize = 48;
+txt.characters = "Heading text";
+txt.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+txt.x = 80;
+txt.y = 120;
+slide.appendChild(txt);
+```
+
+### Create a rectangle
+```js
+const rect = figma.createRectangle();
+rect.resize(400, 300);
+rect.x = 100;
+rect.y = 200;
+rect.fills = [{ type: 'SOLID', color: { r: 0.2, g: 0.2, b: 0.2 } }];
+slide.appendChild(rect);
+```
+
+### Create an ellipse
+```js
+const ellipse = figma.createEllipse();
+ellipse.resize(300, 300);
+ellipse.x = 500;
+ellipse.y = 100;
+ellipse.fills = [{ type: 'SOLID', color: { r: 0.5, g: 0.2, b: 0.8 }, opacity: 0.2 }];
+slide.appendChild(ellipse);
+```
+
+### Image placeholder pattern
+```js
+// Placeholder rectangle
+const ph = figma.createRectangle();
+ph.resize(placeholderW, placeholderH);
+ph.x = placeholderX;
+ph.y = placeholderY;
+ph.fills = [{ type: 'SOLID', color: { r: 0.15, g: 0.15, b: 0.15 } }];
+ph.strokes = [{ type: 'SOLID', color: { r: 0.8, g: 0.8, b: 0.8 } }];
+ph.strokeWeight = 2;
+ph.dashPattern = [8, 6];
+slide.appendChild(ph);
+
+// Label inside placeholder
+const label = figma.createText();
+label.fontName = { family: "Inter", style: "Regular" };
+label.fontSize = 14;
+label.characters = "[Image: description of what goes here]";
+label.fills = [{ type: 'SOLID', color: { r: 0.8, g: 0.8, b: 0.8 } }];
+label.x = ph.x + 16;
+label.y = ph.y + placeholderH / 2 - 10;
+slide.appendChild(label);
+```
+
+The placeholder label must exactly match the prompt in `image-prompts.md` for that slide.
+
+---
+
+## Common Type Errors
+
+### "Expected value of type number, got object"
+**Cause:** Argument order mismatch in a helper function — passing an object where a number is expected, or vice versa.
 
 ```js
-// Slide N — Name
+// Helper defined as: addText(parent, content, x, y, fontSize)
+// WRONG — passing width where content is expected
+addText(slide, W * 0.5, "My text", 100, 48);
+
+// CORRECT
+addText(slide, "My text", 100, 200, 48);
+```
+
+**Prevention:** Before calling any helper, verify the argument order matches the function signature.
+
+### "Font not loaded" / characters not setting
+**Cause:** Setting `fontName` or `characters` before `loadFontAsync` resolves.
+
+**Fix:** Load every font family + style combination used in the plugin at startup, before any slide creation.
+
+### "Cannot read properties of undefined"
+**Cause:** Referencing a node before it exists, or using the wrong variable name.
+
+**Fix:** Check creation order — nodes must exist before being appended or modified.
+
+---
+
+## Slide Code Structure
+
+Each slide follows this pattern:
+
+```js
+// --- Slide N: Name ---
 const slideN = figma.createFrame();
 slideN.resize(W, H);
-slideN.name = "NN — Slide Name";
+slideN.name = "NN — Name";
 figma.currentPage.appendChild(slideN);
 
-// 1. Background fill (never leave black)
+// 1. Background
 slideN.fills = [{ type: 'SOLID', color: { r: ..., g: ..., b: ... } }];
 
-// 2. Atmospheric shapes (orbs, panels, dividers)
+// 2. Structural shapes (panels, dividers, decorative elements)
 
 // 3. Image placeholder (if this slide has an image)
 
-// 4. Text content
+// 4. Text content — headings, body, labels
 ```
-
-**Rule: Every slide needs a non-black visual treatment.** A slide that is just dark + text is not a designed slide.
 
 ---
 
-## Design System — 24 Tattoos Reference
+## What the Plugin Can and Cannot Do
 
-**Slide dimensions:** 1920 × 1080px
+| Can Do | Cannot Do |
+|--------|-----------|
+| Create frames, text, rectangles, ellipses, lines | Load images from URLs into fills |
+| Set solid and gradient fills | Apply blur effects (without advanced API usage) |
+| Set font, size, weight, color, alignment | Read/write files |
+| Set opacity, corner radius, stroke | Make network requests |
+| Group and nest nodes | Use fonts not installed on the machine |
 
-**Color palette:**
-| Name | Hex | RGB (0–1) |
-|------|-----|-----------|
-| Background dark | #140D0A | r:0.08, g:0.05, b:0.04 |
-| Warm brown mid | #1E120C | r:0.12, g:0.07, b:0.05 |
-| Accent burnt orange | #D4520A | r:0.83, g:0.32, b:0.04 |
-| Gold | #D4A43E | r:0.83, g:0.64, b:0.24 |
-| UV purple | #7B2DFF | r:0.48, g:0.18, b:1.0 |
-| Text white | #F5F0E8 | r:0.96, g:0.94, b:0.91 |
-| Text grey | #8A8178 | r:0.54, g:0.51, b:0.47 |
-
-**Typography:**
-- Display headings: Playfair Display Bold
-- Body / labels: Inter Regular / Medium
-- Small metadata: Inter Regular, 12–14px, grey
-
-**Layout patterns used:**
-- Full bleed (cover, key emotional slides): background fills entire frame
-- Two-column (character slides): left 42% = image/portrait zone, right 58% = text
-- Text-dominant: large typographic statement + atmospheric orbs
-- Grid (market / comparable): 2×2 or 3×2 card layout
-
-**Orb system:** Overlapping ellipses with 10–20% opacity, burnt orange or UV purple, placed off-frame (x < 0 or x > W) to bleed into the edge.
-
-**Dash mark:** 30px horizontal line, gold color, top-left corner of every slide at y=40.
-
-**Bottom bar:** Full-width rectangle, 48px height at y = H-48, dark fill, with text: `01 ——— TITLE · Subtitle`
+**Implication for images:** All image fills must be placed manually in Figma after the plugin runs. The plugin creates placeholder rectangles that the human replaces with real images.
 
 ---
 
 ## Image Prompt Standards
 
-Every AI-generated image prompt must include, in this order:
-1. **Camera + lens** — `ARRI Alexa 35 · Zeiss Master Prime [focal length]mm`
-2. **Camera angle** — low angle, OTS, wide establishing, extreme close-up, etc.
-3. **Scene subject** — specific to the slide content, NOT generic
-4. **Single light source** — where it comes from, what quality
+Every AI-generated image prompt must be written in this order:
+
+1. **Camera + lens** — specific equipment (e.g., `ARRI Alexa 35 · Zeiss Master Prime 35mm`)
+2. **Shot type and angle** — wide establishing, close-up, OTS, low angle, etc.
+3. **Scene subject** — what's specifically in the frame, tied to the slide content
+4. **Light source** — single source, where it comes from, what quality
 5. **Atmosphere** — grain, color grade, mood
-6. **Constraint** — `no faces visible` / `no people` / `silhouette only`
+6. **Constraint** — `no faces`, `no people`, `silhouette only`, etc.
 
-**Bad prompt:**
-> "A cyclist in Paris at night, cinematic, moody"
+**The prompt must match the content of that specific slide — not the project in general.**
 
-**Good prompt:**
-> "ARRI Alexa 35 · Zeiss Master Prime 28mm — wide establishing shot from behind, lone cyclist seen from low angle on rain-slicked Rue de Rivoli, single sodium streetlamp casting warm amber shadow forward, rear Uber Eats bag barely visible, Parisian Haussman facades dark on both sides, grain-heavy night photography look, no face visible"
-
-**Prompt-to-slide alignment rule:** The image prompt must connect to the TEXT on that specific slide, not just the general story. A slide about the synopsis needs an image that represents the mystery/central premise — not Pierre's bicycle because he's a cyclist.
+For slides requiring real photos (actors, real people, specific locations): mark explicitly as `REAL PHOTO — NOT AI`. Do not write an AI prompt for these.
 
 ---
 
-## Placeholder ↔ Prompt Consistency
+## image-prompts.md Format
 
-If the plugin creates a placeholder labeled `"Pierre cycling through rain-soaked Paris"`, the corresponding entry in `image-prompts.md` for that slide MUST describe that same scene. Mismatches cause confusion when placing final images.
+```markdown
+## Slide 01 — [Slide Name]
+**Aspect ratio:** [ratio]
+**Placement:** [full bleed / left panel / right panel / etc.]
+**Type:** AI generated / REAL PHOTO — NOT AI / No image needed
 
-Audit process:
-1. Export or screenshot every slide from Figma
-2. Read each placeholder label
-3. Cross-reference against `image-prompts.md`
-4. Any mismatch = fix both (or fix whichever is wrong)
-
----
-
-## What the Plugin Cannot Do
-
-| Limitation | Implication |
-|-----------|-------------|
-| Cannot load images from URLs | All image fills must be placed manually after plugin runs |
-| Cannot use Figma blur API in basic builds | Blurred orbs require PNG assets placed manually |
-| No network access (`fetch` blocked) | All data must be hardcoded into `code.js` |
-| No file system access | Cannot read/write local files |
-| Font must be loaded before use | Load all fonts at plugin startup |
+[Full prompt text here, or "N/A"]
 
 ---
 
-## Testing Workflow
+## Slide 02 — [Slide Name]
+...
+```
+
+---
+
+## Testing and Iteration
 
 ```
-1. Edit code.js locally
+1. Write code.js
 2. In Figma: Plugins → Development → [plugin] → Run
-   (Figma hot-reloads code.js changes automatically in most cases)
-3. If error: read the exact message, identify the line, fix the type
-4. If layout is wrong: add console.log statements — output appears in Figma's dev console
-5. If fonts not rendering: confirm loadFontAsync is called for that exact family + style combo
-6. Delete the generated page and re-run to test from scratch
+3. Figma hot-reloads code.js on re-run in most cases
+4. If error: read the exact message → find the line → fix the type mismatch or load order
+5. Delete the generated page before re-running to test clean
+6. Use console.log() for debugging — output appears in Figma's plugin dev console
 ```
 
 ---
 
-## File Versioning
+## Delivery Format
 
-Always version `code.js` in GitHub. After each working build:
+When delivering a plugin to a human:
+1. Push `code.js`, `manifest.json`, and `image-prompts.md` to GitHub
+2. Send a direct link to `code.js` on GitHub
+3. Instructions: "Download `code.js`, replace the file in your plugin folder, re-import from `manifest.json` if needed, run."
+4. Never paste code in Discord — always link to GitHub
+
+---
+
+## Versioning
+
+After each working build:
 ```
-git add figma-plugin/code.js figma-plugin/image-prompts.md
-git commit -m "figma: working v3 — visual treatments complete"
+git add code.js manifest.json image-prompts.md
+git commit -m "figma: [what changed]"
 git push
 ```
 
-Name versions clearly: v1, v2, v3 — or use git branches for major experiments. A working plugin that gets broken by edits can always be restored from git.
-
----
-
-## Delivery
-
-When delivering a plugin to a human:
-1. Push the final `code.js` and `manifest.json` to GitHub
-2. Link directly to the raw file (not the repo root)
-3. Include instruction: "Download `code.js`, replace the one in your `figma-plugin-v3/` folder, re-import from manifest.json, run."
-4. Do NOT paste the code in Discord — link to GitHub
-
-Link format:
-```
-https://github.com/Von-Doom-Studios/[repo]/blob/main/figma-plugin-v3/code.js
-```
+Name versions clearly in commit messages. A broken build can always be rolled back if the working version was committed.
