@@ -20,6 +20,8 @@ Three files in the same folder on your computer:
 - `code.js` — the plugin logic that builds the deck
 - `ui.html` — a simple panel with a button that triggers the generation
 
+> **Note:** `manifest.json` must include `"editorType": ["figma"]` or Figma will refuse to import it with a "Missing editorType" error. This is a Figma requirement — the guide's template already includes it.
+
 ---
 
 ## Setup — First Time

@@ -30,9 +30,12 @@ plugin-folder/
   "id": "unique-string",
   "api": "1.0.0",
   "main": "code.js",
-  "ui": "ui.html"
+  "ui": "ui.html",
+  "editorType": ["figma"]
 }
 ```
+
+> **Required:** `editorType` must be present or Figma will refuse to import the plugin. Use `["figma"]` for standard Figma files. Other valid values: `"figjam"`, `"dev"`, `"slides"`, `"buzz"` — combine as needed, e.g. `["figma", "figjam"]`.
 
 ---
 
