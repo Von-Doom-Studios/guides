@@ -1,132 +1,127 @@
-# Figma Plugin Guide — How to Build a Deck in Figma with a Plugin
+# Figma Plugin Guide — How to Build a Deck Using a Plugin
 
 **Last updated:** April 16, 2026  
-**What this covers:** The process of building a Figma presentation using a custom plugin
+**What this covers:** The process for building a Figma presentation using a custom plugin — based on what actually worked
 
 ---
 
 ## What This Process Is
 
-You write a plugin in JavaScript (`code.js`) that builds an entire presentation inside Figma automatically — slides, text, layouts, colors, shapes, image placeholders. You import it as a local plugin and run it once. The plugin creates everything from scratch.
+You write a plugin in JavaScript that builds an entire presentation inside Figma automatically — slides, text, layouts, colors, shapes, and image placeholders. You import it as a local plugin, click a button, and it generates the full deck.
 
-This is faster and more reproducible than building slides manually. Every change is made in code and re-run.
+Every change is made in code and re-run. It's reproducible and version-controlled.
 
 ---
 
 ## What You Need
 
-Two files in the same folder on your computer:
-- `manifest.json` — tells Figma the plugin name and where the code lives
+Three files in the same folder on your computer:
+- `manifest.json` — tells Figma the plugin name and where the files are
 - `code.js` — the plugin logic that builds the deck
-
-The folder can be named anything.
+- `ui.html` — a simple panel with a button that triggers the generation
 
 ---
 
 ## Setup — First Time
 
-### 1. Create the manifest
-Minimum `manifest.json`:
-```json
-{
-  "name": "Your Plugin Name",
-  "id": "any-unique-string",
-  "api": "1.0.0",
-  "main": "code.js"
-}
-```
+### 1. Get the files
+Download or clone the plugin folder from GitHub. All three files must be in the same directory.
 
 ### 2. Import into Figma
-1. Open the **Figma desktop app** (required — local plugins don't work in browser)
+1. Open the **Figma desktop app** — local plugins do not work in the browser
 2. Go to **Main Menu → Plugins → Development → Import plugin from manifest…**
-3. Select your `manifest.json`
-4. Plugin now appears under **Plugins → Development**
+3. Navigate to the plugin folder and select `manifest.json`
+4. The plugin now appears under **Plugins → Development**
 
 ### 3. Run the plugin
 1. Open or create a Figma file
 2. **Plugins → Development → [your plugin name]**
-3. Click Run — it builds the deck automatically
+3. A small panel appears with a button
+4. Click **Generate** — the plugin builds the full deck on a new page
 
 ---
 
 ## The Build Workflow
 
 ```
-1. Brief: understand what slides are needed and what each one contains
-2. Write code.js — one section per slide
-3. Import from manifest.json → run in Figma
-4. Review output → fix bugs → re-run
-5. Write image-prompts.md with a prompt for every slide that needs an image
+1. Understand what slides are needed and what each one contains
+2. Write code.js (one section per slide) and ui.html
+3. Import from manifest.json → run in Figma → click Generate
+4. Review output → fix any errors → re-run
+5. Write image-prompts.md — one prompt per slide that needs an image
 6. Generate images externally (Midjourney, Flux, etc.)
-7. Place images into Figma manually by replacing the placeholders the plugin created
-8. Final check: does every image connect to the content on that slide?
+7. Place images into Figma by replacing the placeholder boxes the plugin created
+8. Final check: does every image match the content on that slide?
 ```
 
 ---
 
-## When the Plugin Has a Bug
+## When There's an Error
 
-Figma shows errors as a red bar or console message. Common ones:
+Figma shows errors as a red notification bar at the bottom of the screen, or a message in the plugin panel.
 
-**"Expected value of type number, got object"**
-- You passed an object where a number was expected, or mixed up argument order in a helper function
-- Fix: check the exact line, verify argument types match the function signature
+**What to do:**
+1. Note the exact error message
+2. Fix `code.js` — the most common causes are argument order mistakes and font loading issues (see below)
+3. Delete the page the plugin generated (so you're starting fresh)
+4. Re-run the plugin
 
-**"Cannot read properties of undefined"**
-- You referenced a node or variable before it was created
-- Fix: check the order of operations in your code
+**Figma usually picks up changes to `code.js` automatically.** If it doesn't, re-import from manifest.
 
-**"Font not loaded"**
-- You tried to set text before loading the font
-- Fix: always `await figma.loadFontAsync(...)` before setting `fontName` or `characters`
+---
 
-**Re-running after a fix:**
-Figma usually hot-reloads `code.js` — just click Run again. If it doesn't pick up changes, re-import from manifest. Delete the previously generated page before re-running to start clean.
+## The Most Common Errors
+
+**"Expected value of type number, got object"**  
+An argument is being passed in the wrong order to a helper function — something that should be a number is getting an object instead (or vice versa). The fix is checking which argument is wrong on the line the error points to.
+
+**Font not working / text showing wrong**  
+The font wasn't loaded before the text was created. All fonts need to be loaded at the very start of the plugin, before any slides are built. This is already handled in the working pattern — don't move font loading anywhere else.
+
+**Plugin crashes silently / no output**  
+A slide section has an error that's being swallowed. Check the Figma plugin dev console for details.
 
 ---
 
 ## Image Placeholders
 
-The plugin can't insert real images. Instead, create placeholder rectangles with:
-- A contrasting border so they're visually obvious
-- A label inside describing exactly what image goes there
+The plugin creates placeholder rectangles with dashed borders and a label showing what image goes there. They're intentionally high-contrast so you can see exactly where each image sits.
 
-When you generate the final images, replace them manually in Figma:
-1. Select the placeholder rectangle
-2. In the Fill panel, swap the solid fill for an image fill
-3. Delete or hide the label text
-
----
-
-## Image Prompts Document
-
-Keep a separate `image-prompts.md` alongside your plugin files. One prompt per slide that needs an image.
-
-**Each prompt must include:**
-1. Camera and lens (leads the prompt)
-2. Camera angle and composition
-3. Scene subject — specific to what's on that slide, not generic
-4. Single light source (where it comes from)
-5. Atmosphere / mood
-6. Constraint (no faces, no people, silhouette only, etc.)
-
-**The prompt must match the text on the slide.** If the slide is about a specific character or moment, the image should reflect that — not something tangentially related.
-
-**Also flag clearly:**
-- Slides that need a real photo (not AI-generated) — mark them as `REAL PHOTO — NO AI`
-- Slides that need no image at all
+**To place the final image:**
+1. Select the placeholder rectangle in Figma
+2. In the Fill panel on the right, click the fill and switch it to **Image**
+3. Upload or select your generated image
+4. Delete or hide the label text node above it
 
 ---
 
-## Design Rules (Process, Not Style)
+## Image Prompts
 
-These apply regardless of the project:
+Keep an `image-prompts.md` file alongside the plugin. One entry per slide that needs an image.
 
-- **Every slide needs a visual treatment.** A slide that is just background + text with no color, shape, or image is not finished.
-- **Image placeholders must be visually distinct.** If the placeholder blends into the background, you won't know where the image goes.
-- **Slides should vary in layout.** Using the same template for every slide reads as a document, not a presentation.
-- **The image must connect to the text on that specific slide.** Don't reuse a thematically related image across slides where it doesn't fit the content.
-- **Placeholder labels must match the image prompts.** If they diverge, you'll place the wrong image.
+**Each prompt must have:**
+1. Camera and lens — stated first
+2. Shot type and angle
+3. What's in the scene — specific to that slide's content
+4. Single light source
+5. Atmosphere and mood
+6. Constraint — no faces, no people, silhouette only, etc.
+
+**The image must connect to the text on that slide** — not just the project theme in general.
+
+Slides that need a real photo (not AI): mark them clearly as **REAL PHOTO — NOT AI**.
+
+---
+
+## Design Rules
+
+These apply to every project, regardless of style:
+
+- **Every slide needs a visual treatment.** Text on a plain dark background is not a finished slide.
+- **Image placeholders must be visually obvious.** If the placeholder blends in, you won't know where the image goes.
+- **Slide layouts should vary.** The same template on every slide reads as a document, not a presentation.
+- **The image must match the text on that slide.** Check this after generating — it's easy to have a prompt that drifts from the slide content.
+- **The placeholder label must match the image prompt.** If they diverge, you'll place the wrong image.
 
 ---
 
@@ -136,13 +131,16 @@ These apply regardless of the project:
 |------|------------|
 | `manifest.json` | Plugin metadata |
 | `code.js` | The plugin — all slide logic |
+| `ui.html` | The plugin's button panel |
 | `image-prompts.md` | One prompt per slide that needs an image |
 
-Version all of these in GitHub. If you break a working build with edits, you need the last good version.
+**Version all of these in GitHub.** If you break a working build, you need to be able to roll back. Commit after every clean working run.
 
-**Commit after every working build:**
-```
-git add manifest.json code.js image-prompts.md
-git commit -m "figma: working build — [brief description]"
-git push
-```
+---
+
+## Delivering to Someone Else
+
+When sharing the plugin:
+1. Push all files to GitHub
+2. Send direct links to each file (not the folder — direct links to the files)
+3. Instructions: "Download all three files into the same folder. In Figma desktop: Plugins → Development → Import plugin from manifest → select manifest.json → Run."
