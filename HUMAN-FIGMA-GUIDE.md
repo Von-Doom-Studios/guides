@@ -20,7 +20,9 @@ Three files in the same folder on your computer:
 - `code.js` — the plugin logic that builds the deck
 - `ui.html` — a simple panel with a button that triggers the generation
 
-> **Note:** `manifest.json` must include `"editorType": ["figma"]` or Figma will refuse to import it with a "Missing editorType" error. This is a Figma requirement — the guide's template already includes it.
+> **Note:** `manifest.json` must include two required fields or Figma will error on import:
+> - `"editorType": ["figma"]` — required by Figma; without it you get "Missing editorType"
+> - `"documentAccess": "dynamic-page"` — required when the plugin creates new pages; without it page creation fails silently at runtime
 
 ---
 

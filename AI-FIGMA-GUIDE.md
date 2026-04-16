@@ -31,11 +31,14 @@ plugin-folder/
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
 }
 ```
 
-> **Required:** `editorType` must be present or Figma will refuse to import the plugin. Use `["figma"]` for standard Figma files. Other valid values: `"figjam"`, `"dev"`, `"slides"`, `"buzz"` — combine as needed, e.g. `["figma", "figjam"]`.
+> **Required fields:**
+> - `editorType` — Figma will refuse to import without it. Use `["figma"]` for standard files.
+> - `documentAccess: "dynamic-page"` — required when the plugin creates new pages (`figma.createPage()`). Without this, page creation will fail at runtime.
 
 ---
 
@@ -139,7 +142,7 @@ B.prototype.frame = function(name, bg) {
   f.x = this.idx * (W + GAP);  // space slides horizontally
   f.y = 0;
   f.fills = [{ type: 'SOLID', color: bg || { r: 0, g: 0, b: 0 } }];
-  f.clipsContent = true;
+  f.clipsContent = true;  // REQUIRED — prevents elements from bleeding outside slide bounds
   this.page.appendChild(f);
   this.idx++;
   return f;
@@ -156,52 +159,83 @@ B.prototype.rect = function(f, x, y, w, h, col, opacity) {
   return r;
 };
 
-// Create a text node — defensive pattern
-B.prototype.txt = function(f, content, x, y, w, h, opts) {
-  opts = opts || {};
+// Create a text node — defensive pattern matching working v3
+B.prototype.txt = function(f, content, x, y, w, h, o) {
+  o = o || {};
   var t = figma.createText();
   t.x = x; t.y = y;
   t.resize(w, h);
   t.textAutoResize = 'HEIGHT';
 
-  // Font selection
-  var family = opts.font === 'display' ? 'Playfair Display'
-             : opts.font === 'mono'    ? 'Roboto Mono'
-             : 'Inter';
-  var style = opts.bold ? 'Bold' : 'Regular';
+  // Font family selection
+  var fam = o.font === 'display' ? 'Playfair Display'
+          : o.font === 'mono'    ? 'Roboto Mono'
+          : 'Inter';
+
+  // Font style — display fonts support Bold Italic; Inter uses 'Medium' not 'Bold'
+  var sty = o.font === 'display'
+    ? (o.bold && o.italic ? 'Bold Italic' : o.bold ? 'Bold' : o.italic ? 'Italic' : 'Regular')
+    : (o.bold ? 'Medium' : 'Regular');
+
   try {
-    t.fontName = { family: family, style: style };
+    t.fontName = { family: fam, style: sty };
   } catch(e) {
     try { t.fontName = { family: 'Inter', style: 'Regular' }; } catch(e2) {}
   }
 
-  t.fontSize = opts.size || 24;
-  t.fills = [{ type: 'SOLID', color: opts.color || { r: 1, g: 1, b: 1 } }];
-  t.textAlignHorizontal = opts.align || 'LEFT';
+  t.fontSize = o.size || 24;
+  t.fills = [{ type: 'SOLID', color: o.color || { r: 1, g: 1, b: 1 } }];
+  t.textAlignHorizontal = o.align === 'CENTER' ? 'CENTER' : o.align === 'RIGHT' ? 'RIGHT' : 'LEFT';
+
+  // lineHeight and letterSpacing — wrap in try/catch as these can throw on some node states
+  try { t.lineHeight = o.lh ? { value: o.lh, unit: 'PERCENT' } : { unit: 'AUTO' }; } catch(e) {}
+  try { t.letterSpacing = o.ls ? { value: o.ls, unit: 'PERCENT' } : { value: 0, unit: 'PERCENT' }; } catch(e) {}
 
   // Set characters last — always wrap in try/catch
-  try {
-    t.characters = content;
-  } catch(e) {
-    try { t.characters = ''; } catch(e2) {}
-  }
+  try { t.characters = content; } catch(e) { try { t.characters = ''; } catch(e2) {} }
 
   f.appendChild(t);
   return t;
 };
 
+// Create a radial gradient ellipse (orb effect)
+// cx/cy = center point, r = radius, col = color object, op = max opacity
+B.prototype.orb = function(f, cx, cy, r, col, op) {
+  col = col || { r: 0.8, g: 0.6, b: 0.3 };
+  op = op || 0.7;
+  var e = figma.createEllipse();
+  e.x = cx - r; e.y = cy - r;
+  e.resize(r * 2, r * 2);
+  e.fills = [{
+    type: 'GRADIENT_RADIAL',
+    gradientTransform: [[1, 0, 0], [0, 1, 0]],
+    gradientStops: [
+      { position: 0,   color: { r: col.r, g: col.g, b: col.b, a: op } },
+      { position: 0.4, color: { r: col.r, g: col.g, b: col.b, a: op * 0.55 } },
+      { position: 0.7, color: { r: col.r, g: col.g, b: col.b, a: op * 0.18 } },
+      { position: 1,   color: { r: col.r, g: col.g, b: col.b, a: 0 } },
+    ],
+    opacity: 1
+  }];
+  e.strokes = [];
+  f.appendChild(e);
+  return e;
+};
+
 // Image placeholder — dashed border, labeled clearly
-B.prototype.img = function(f, x, y, w, h, label) {
+// fillCol is optional — defaults to a dark neutral if not provided
+B.prototype.img = function(f, x, y, w, h, label, fillCol) {
   var bg = figma.createRectangle();
   bg.x = x; bg.y = y;
   bg.resize(w, h);
-  bg.fills = [{ type: 'SOLID', color: { r: 0.12, g: 0.10, b: 0.08 } }];
-  bg.strokes = [{ type: 'SOLID', color: { r: 0.8, g: 0.7, b: 0.4 } }];
+  bg.fills = [{ type: 'SOLID', color: fillCol || { r: 0.12, g: 0.10, b: 0.06 } }];
+  bg.strokes = [{ type: 'SOLID', color: { r: 0.788, g: 0.659, b: 0.298 } }];  // gold
   bg.strokeWeight = 3;
   bg.dashPattern = [16, 8];
   f.appendChild(bg);
-  this.txt(f, '[ ' + label + ' ]', x + 20, y + h / 2 - 12, w - 40, 28,
-    { size: 16, color: { r: 0.8, g: 0.7, b: 0.4 } });
+  // Label centered in placeholder — use mono font, gold color
+  this.txt(f, '[ ' + label + ' ]', x + w/2 - 280, y + h/2 - 20, 560, 40,
+    { size: 20, color: { r: 0.788, g: 0.659, b: 0.298 }, align: 'CENTER', font: 'mono' });
   return bg;
 };
 ```
