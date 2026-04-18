@@ -53,4 +53,4 @@ The agent **always asks before pushing**. You are always in control.
 - 📖 [README.md](./README.md) — Project overview and links
 - 🛠 [SETUP.md](./SETUP.md) — Detailed local setup
 - 🤖 [ai-workflow/OVERVIEW.md](./ai-workflow/OVERVIEW.md) — How to work with the AI agent
-- 🎨 [../design/STYLE-GUIDE.md](../design/STYLE-GUIDE.md) — Visual rules for the site
+- 🎨 [../../design/STYLE-GUIDE.md](../../design/STYLE-GUIDE.md) — Visual rules for the site

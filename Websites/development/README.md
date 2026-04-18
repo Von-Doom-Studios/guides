@@ -60,4 +60,4 @@ The site is maintained by **VD-Dev** — an AI coding agent on the VonDoom Studi
 - [DEPLOYMENT.md](./DEPLOYMENT.md) — Vercel deployment and environment variables
 - [DECISIONS.md](./DECISIONS.md) — Why things were built the way they were
 - [ai-workflow/OVERVIEW.md](./ai-workflow/OVERVIEW.md) — Working with the AI agent
-- [../design/STYLE-GUIDE.md](../design/STYLE-GUIDE.md) — Visual design system
+- [../../design/STYLE-GUIDE.md](../../design/STYLE-GUIDE.md) — Visual design system

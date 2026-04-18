@@ -2,7 +2,7 @@
 
 How to use external generative AI tools to create images, copy, and design assets for the Floki website.
 
-> For the full workflow including how to hand off assets to the dev agent, see [../dev/ai-workflow/DESIGN-WORKFLOW.md](../dev/ai-workflow/DESIGN-WORKFLOW.md).
+> For the full workflow including how to hand off assets to the dev agent, see [./ai-workflow/DESIGN-WORKFLOW.md](./ai-workflow/DESIGN-WORKFLOW.md).
 
 ---
 
