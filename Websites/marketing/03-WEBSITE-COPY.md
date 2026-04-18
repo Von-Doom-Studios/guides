@@ -1,200 +1,53 @@
 # Website Copy — Floki
 
-Working document for all Floki website copy. Sections are tracked with status tags.
+Working document tracking all Floki website copy. Full copy files live in `Websites/messaging/`.
+
+**Thesis:** *"Designed for spaces that demand more."*
+**Dual audience:** Individual buyers (DTC) + Trade/B2B (hotels, FF&E, STR operators)
 
 **Status key:**
 - `[ NEEDED ]` — not yet written
 - `[ DRAFT ]` — written, needs review
 - `[ FINAL ]` — approved, ready for dev
 
-Hand off completed pages to VD-Dev in #dev.
+---
+
+## Page Status
+
+| Page | File | Status |
+|---|---|---|
+| Home | `Websites/messaging/03-HOME.md` | `[ DRAFT ]` |
+| Shop + Products | `Websites/messaging/04-SHOP.md` | `[ DRAFT ]` |
+| Our Story (/explore) | `Websites/messaging/05-EXPLORE.md` | `[ DRAFT ]` |
+| FAQ | `Websites/messaging/06-FAQ.md` | `[ DRAFT ]` |
+| Contact | `Websites/messaging/07-CONTACT.md` | `[ DRAFT ]` |
+| Footer + Cart | `Websites/messaging/08-FOOTER-CART.md` | `[ DRAFT ]` |
+| Policy Pages | — | `[ NEEDED — legal review required ]` |
 
 ---
 
-## Home Page (`/`)
+## B2B / Trade Touch Points (embedded across site)
 
-### Announcement Bar
+These are the moments where the site signals to hotel buyers and trade professionals without alienating individual buyers:
 
-| Field | Copy | Status |
+| Location | Copy | Status |
 |---|---|---|
-| Message 1 | | `[ NEEDED ]` |
-| Message 2 | | `[ NEEDED ]` |
-| Message 3 | | `[ NEEDED ]` |
+| Announcement bar (Message 3) | "Trade & wholesale inquiries welcome." | `[ DRAFT ]` |
+| Hero Slide 3 | "Floki products for homes, hotels, and the spaces in between." | `[ DRAFT ]` |
+| Featured product description | "...from a private closet to a boutique hotel suite." | `[ DRAFT ]` |
+| Brand statement body | "From a private wardrobe to a boutique hotel room..." | `[ DRAFT ]` |
+| Our Story — Trade section | Full section with trade CTA | `[ DRAFT ]` |
+| Contact page sidebar | Trade inquiry callout | `[ DRAFT ]` |
+| FAQ — About Floki | "Do you work with hotels or bulk buyers?" | `[ DRAFT ]` |
 
 ---
 
-### Hero Slider
+## Items Still Needed
 
-**Slide 1**
-| Field | Copy | Status |
-|---|---|---|
-| Headline | | `[ NEEDED ]` |
-| Supporting text | | `[ NEEDED ]` |
-| Button label | | `[ NEEDED ]` |
-
-**Slide 2**
-| Field | Copy | Status |
-|---|---|---|
-| Headline | | `[ NEEDED ]` |
-| Supporting text | | `[ NEEDED ]` |
-| Button label | | `[ NEEDED ]` |
-
-**Slide 3**
-| Field | Copy | Status |
-|---|---|---|
-| Headline | | `[ NEEDED ]` |
-| Supporting text | | `[ NEEDED ]` |
-| Button label | | `[ NEEDED ]` |
-
----
-
-### Featured Product Section (Woven Hanger)
-
-| Field | Copy | Status |
-|---|---|---|
-| Section label | | `[ NEEDED ]` |
-| Product description | | `[ NEEDED ]` |
-| Trust badge 1 | | `[ NEEDED ]` |
-| Trust badge 2 | | `[ NEEDED ]` |
-| Trust badge 3 | | `[ NEEDED ]` |
-
----
-
-### Product Carousel
-
-| Field | Copy | Status |
-|---|---|---|
-| Section heading | | `[ NEEDED ]` |
-| Section subheading | | `[ NEEDED ]` |
-
----
-
-### Brand Statement Section
-
-| Field | Copy | Status |
-|---|---|---|
-| Headline | | `[ NEEDED ]` |
-| Body text | | `[ NEEDED ]` |
-| Button label | | `[ NEEDED ]` |
-
----
-
-### Testimonials
-
-| Field | Copy | Status |
-|---|---|---|
-| Testimonial 1 | | `[ NEEDED ]` |
-| Testimonial 2 | | `[ NEEDED ]` |
-| Testimonial 3 | | `[ NEEDED ]` |
-| Customer names | | `[ NEEDED ]` |
-
----
-
-## Shop Page (`/shop`) & Collections
-
-### Dark Banner
-
-| Field | Copy | Status |
-|---|---|---|
-| Eyebrow text | | `[ NEEDED ]` |
-| Headline | | `[ NEEDED ]` |
-| Body text | | `[ NEEDED ]` |
-| Button label | | `[ NEEDED ]` |
-
-### Trust Badges
-
-| Badge | Title | Description | Status |
-|---|---|---|---|
-| Badge 1 | | | `[ NEEDED ]` |
-| Badge 2 | | | `[ NEEDED ]` |
-| Badge 3 | | | `[ NEEDED ]` |
-
----
-
-## Product Detail Pages (`/products/[handle]`)
-
-| Product | Description | Availability text | Status |
-|---|---|---|---|
-| Woven Hanger | | | `[ NEEDED ]` |
-| Sneaker Cases | | | `[ NEEDED ]` |
-| African Pillows | | | `[ NEEDED ]` |
-
----
-
-## Our Story Page (`/explore`)
-
-### Hero
-| Field | Copy | Status |
-|---|---|---|
-| Headline | | `[ NEEDED ]` |
-| Subtext | | `[ NEEDED ]` |
-
-### Image + Text Blocks
-| Block | Heading | Body | Status |
-|---|---|---|---|
-| Block 1 | | | `[ NEEDED ]` |
-| Block 2 | | | `[ NEEDED ]` |
-| Block 3 | | | `[ NEEDED ]` |
-
-### Team Section
-| Field | Copy | Status |
-|---|---|---|
-| Section heading | | `[ NEEDED ]` |
-| Team bios | | `[ NEEDED ]` |
-
----
-
-## FAQ Page (`/faq`)
-
-| Category | Status |
-|---|---|
-| Orders & Shipping (3–5 Q&A) | `[ NEEDED ]` |
-| Returns & Refunds (3–5 Q&A) | `[ NEEDED ]` |
-| Product Care (3–5 Q&A) | `[ NEEDED ]` |
-| About Floki (3–5 Q&A) | `[ NEEDED ]` |
-
----
-
-## Contact Page (`/contact`)
-
-| Field | Copy | Status |
-|---|---|---|
-| Page headline | | `[ NEEDED ]` |
-| Intro text | | `[ NEEDED ]` |
-| Submit button label | | `[ NEEDED ]` |
-| Sidebar contact info | | `[ NEEDED ]` |
-
----
-
-## Footer (site-wide)
-
-| Field | Copy | Status |
-|---|---|---|
-| Newsletter heading | | `[ NEEDED ]` |
-| Newsletter subtext | | `[ NEEDED ]` |
-| Email input placeholder | | `[ NEEDED ]` |
-| Subscribe button label | | `[ NEEDED ]` |
-| Footer tagline / copyright | | `[ NEEDED ]` |
-
----
-
-## Cart Drawer (site-wide)
-
-| Field | Copy | Status |
-|---|---|---|
-| Empty cart headline | | `[ NEEDED ]` |
-| Empty cart subtext | | `[ NEEDED ]` |
-| Checkout button label | | `[ NEEDED ]` |
-
----
-
-## Policy Pages
-
-| Page | Status |
-|---|---|
-| `/terms-of-service` | `[ NEEDED — legal review recommended ]` |
-| `/privacy-policy` | `[ NEEDED — legal review recommended ]` |
-| `/refund-policy` | `[ NEEDED — legal review recommended ]` |
+- [ ] Policy pages (Terms, Privacy, Refund) — legal review recommended
+- [ ] Actual contact email address — placeholder in FAQ and Contact
+- [ ] Team bios for Our Story — need names and info from Anthony
+- [ ] Trade pricing / inquiry process — coordinate with VD-Ops
 
 ---
 
