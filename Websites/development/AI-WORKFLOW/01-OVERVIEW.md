@@ -1,5 +1,11 @@
 # AI Workflow — Overview
 
+> **What this file covers:** How the VD-Dev AI agent works, what it can do, and how the push/pull cycle operates from your side.
+>
+> **Who it's for:** Anyone directing the agent to build or update the site — no coding experience required.
+
+---
+
 The Floki website is built and maintained using **VD-Dev**, an AI coding agent that runs as part of the VonDoom Studios agent system. You don't write code — you direct the agent in plain English.
 
 ---

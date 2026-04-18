@@ -1,5 +1,19 @@
 # Deployment
 
+> **What this file covers:** How the Floki website gets published to the internet, how Vercel works, how to set up environment variables, and how to connect a custom domain.
+>
+> **Who it's for:** Anyone managing the live site, setting up hosting for the first time, or troubleshooting why a change isn't appearing online.
+
+---
+
+## What Is Vercel?
+
+Vercel is the service that hosts the Floki website and makes it accessible on the internet. Every time the agent pushes code to GitHub, Vercel automatically detects the change, rebuilds the site, and publishes it — usually within 1–2 minutes. You don't need to manually deploy anything.
+
+Think of it like this: **GitHub stores the code. Vercel turns that code into a live website.**
+
+---
+
 The Floki website is hosted on **Vercel** and deploys automatically from the `main` branch of the GitHub repo.
 
 ---

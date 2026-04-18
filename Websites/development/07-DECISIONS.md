@@ -1,5 +1,11 @@
 # Design & Technical Decisions
 
+> **What this file covers:** A running log of why specific technical and design decisions were made during development.
+>
+> **Who it's for:** Anyone who inherits this project and wonders why something works the way it does — or anyone considering changing something and needing to understand the reasoning first.
+
+---
+
 A log of *why* things were built the way they were. Saves confusion when someone asks "why is this done like that?" six months later.
 
 ---

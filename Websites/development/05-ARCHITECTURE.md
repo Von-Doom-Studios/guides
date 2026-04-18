@@ -1,5 +1,11 @@
 # Architecture
 
+> **What this file covers:** How the codebase is organized, what each folder does, how pages are routed, and how data moves from Shopify to the browser.
+>
+> **Who it's for:** Anyone who wants to understand how the site is built before working with the agent, or anyone debugging why something isn't working as expected.
+
+---
+
 How the Floki website codebase is structured and how data flows through it.
 
 ---
