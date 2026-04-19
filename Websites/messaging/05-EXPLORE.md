@@ -13,19 +13,19 @@
 
 ---
 
-## Image + Text Blocks
+## Our Journey
 
 ### Block 1 — The Origin
 | Field | Copy |
 |---|---|
 | Heading | Born from a life spent in remarkable places. |
-| Body | Floki began with a conviction that came from years of travel — through boutique hotels in Marrakech, design studios in Milan, and penthouse suites in New York. In each of these places, the same truth held: the products that fill a space either honor it or diminish it. There is no middle ground. Floki was built to be the former. |
+| Body | Floki began with a conviction that came from years of travel through boutique hotels in Marrakech, design studios in Milan, and penthouse suites in New York. In each of these places, the same truth held: the products that fill a space either honor it or diminish it. There is no middle ground. Floki was built to be the former. |
 
 ### Block 2 — The Mission
 | Field | Copy |
 |---|---|
 | Heading | World-class aesthetics. Accessible to everyone. |
-| Body | For decades, exceptional design has lived behind velvet ropes — in luxury hotels, in high-end showrooms, in spaces most people only see in photographs. Floki was created to change that. Every product we make is designed to bring the same considered quality found in the world's finest spaces into the homes, wardrobes, and everyday lives of people who know what good looks like. |
+| Body | For decades, exceptional design has lived behind velvet ropes, in luxury hotels, in high-end showrooms, in spaces most people only see in photographs. Floki was created to change that. Every product we make is designed to bring the same considered quality found in the world's finest spaces into the homes, wardrobes, and everyday lives of people who know what good looks like. |
 
 ### Block 3 — The Standard
 | Field | Copy |
@@ -35,12 +35,26 @@
 
 ---
 
-## Team Section
+## Scrolling Marquee
+
+Rotating inspirational text displayed between sections.
+
+| Slot | Copy |
+|---|---|
+| 1 | Designed for spaces that demand more. |
+| 2 | Every detail earns its place. |
+| 3 | Inspired by the world. Built for your world. |
+| 4 | Quality is not a price point. It is a standard. |
+| 5 | From the finest hotels to the homes that feel like them. |
+
+---
+
+## Testimonial
 
 | Field | Copy |
 |---|---|
-| Section heading | The mission behind the brand. |
-| Team intro | Floki is built by a team of designers and creatives who have spent their careers moving through the world's finest spaces — and asking the same question: why can't everyone live like this? That question is the brand. These products are the answer. |
+| Quote | "We ordered in bulk for our boutique hotel and the quality exceeded every expectation. Guests notice the difference, and so do we." |
+| Attribution | T. Adesanya, Hotel Operator |
 
 ---
 
@@ -49,7 +63,7 @@
 | Field | Copy |
 |---|---|
 | Section heading | Outfitting hotels and boutique properties. |
-| Body | Floki products are used in hospitality spaces that care about every detail. If you're outfitting hotel rooms, suites, short-term rentals, or common areas, we work with FF&E buyers and property operators on volume orders — with the same quality and attention to detail you'll find in every retail piece. |
+| Body | Floki products are used in hospitality spaces that care about every detail. If you're outfitting hotel rooms, suites, short-term rentals, or common areas, we work with FF&E buyers and property operators on volume orders with the same quality and attention to detail you'll find in every retail piece. |
 | CTA label | Inquire about trade pricing |
 | CTA destination | /contact (subject pre-filled: "Trade Inquiry") |
 
