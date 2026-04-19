@@ -1,4 +1,4 @@
-# Messaging Map — Floki Website
+# Messaging Map   Floki Website
 
 This document maps every page and every section on the Floki website that requires copy. Each entry shows what type of content is needed and any constraints.
 
@@ -13,14 +13,14 @@ Rotating messages displayed above the navigation.
 
 | Field | Status | Notes |
 |---|---|---|
-| Message 1 | `[ COPY NEEDED ]` | Short, punchy — e.g. shipping offer, new product |
+| Message 1 | `[ COPY NEEDED ]` | Short, punchy   e.g. shipping offer, new product |
 | Message 2 | `[ COPY NEEDED ]` | Brand statement or secondary offer |
 | Message 3 | `[ COPY NEEDED ]` | Optional third rotation |
 
 ---
 
 ### Hero Slider
-Full-screen carousel — 3 slides. Each slide has a headline, supporting text, and a button.
+Full-screen carousel   3 slides. Each slide has a headline, supporting text, and a button.
 
 **Slide 1**
 | Field | Status | Notes |
@@ -74,14 +74,14 @@ Brand statement block with headline, body, and CTA.
 
 | Field | Status | Notes |
 |---|---|---|
-| Headline | `[ COPY NEEDED ]` | 4–8 words. Currently "Curating the Extraordinary" — can revise. |
+| Headline | `[ COPY NEEDED ]` | 4–8 words. Currently "Curating the Extraordinary"   can revise. |
 | Body text | `[ COPY NEEDED ]` | 2–3 sentences. Brand story in brief. |
 | Button label | `[ COPY NEEDED ]` | Links to /explore |
 
 ---
 
 ### Testimonials Section
-Customer quotes — pulled from a list.
+Customer quotes   pulled from a list.
 
 | Field | Status | Notes |
 |---|---|---|
@@ -128,7 +128,7 @@ Each product on Shopify needs its own copy. Coordinate with VD-Ops for Shopify a
 |---|---|---|
 | Product title | Managed in Shopify | |
 | Product description | `[ COPY NEEDED ]` | 2–3 sentences per product. See brand voice. |
-| In-stock / availability messaging | `[ COPY NEEDED ]` | e.g. "In stock — ships in 3–5 business days" |
+| In-stock / availability messaging | `[ COPY NEEDED ]` | e.g. "In stock   ships in 3–5 business days" |
 
 ---
 
@@ -193,7 +193,7 @@ Each category should have 3–5 questions with answers.
 | Field | Status | Notes |
 |---|---|---|
 | Newsletter heading | `[ COPY NEEDED ]` | Currently placeholder |
-| Newsletter subtext | `[ COPY NEEDED ]` | 1 sentence — why subscribe |
+| Newsletter subtext | `[ COPY NEEDED ]` | 1 sentence   why subscribe |
 | Email input placeholder | `[ COPY NEEDED ]` | e.g. "Your email address" |
 | Subscribe button label | `[ COPY NEEDED ]` | |
 | Footer nav link labels | Locked | Shop, Explore, Contact, etc. |
@@ -203,13 +203,13 @@ Each category should have 3–5 questions with answers.
 
 ## Policy Pages
 
-These are legal documents — use standard e-commerce language as a base, then customize for Floki.
+These are legal documents   use standard e-commerce language as a base, then customize for Floki.
 
 | Page | Status |
 |---|---|
-| `/terms-of-service` | `[ COPY NEEDED — legal review recommended ]` |
-| `/privacy-policy` | `[ COPY NEEDED — legal review recommended ]` |
-| `/refund-policy` | `[ COPY NEEDED — legal review recommended ]` |
+| `/terms-of-service` | `[ COPY NEEDED   legal review recommended ]` |
+| `/privacy-policy` | `[ COPY NEEDED   legal review recommended ]` |
+| `/refund-policy` | `[ COPY NEEDED   legal review recommended ]` |
 
 ---
 
