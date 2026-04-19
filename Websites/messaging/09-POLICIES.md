@@ -1,6 +1,6 @@
-# Policy Pages — Floki
+# Policy Pages   Floki
 
-*Status: DRAFT — pending lawyer review before publishing*
+*Status: DRAFT   pending lawyer review before publishing*
 *Note: Standard e-commerce language used as base. Customize as needed after legal review.*
 
 ---
@@ -21,7 +21,7 @@ All orders are subject to availability and confirmation. We reserve the right to
 We make every effort to accurately describe our products. Colors may vary slightly due to screen settings. If a product differs materially from its description, contact us for a return or exchange.
 
 ### Intellectual Property
-All content on this site — including images, copy, logos, and design — is the property of Floki Brands and may not be reproduced without permission.
+All content on this site   including images, copy, logos, and design   is the property of Floki Brands and may not be reproduced without permission.
 
 ### Limitation of Liability
 Floki Brands is not liable for indirect, incidental, or consequential damages arising from the use of our products or site.
@@ -85,4 +85,4 @@ shopflokibrands@gmail.com
 
 ---
 
-*Owned by VD-Marketing. Pending legal review before publishing — flag to Anthony.*
+*Owned by VD-Marketing. Pending legal review before publishing   flag to Anthony.*
