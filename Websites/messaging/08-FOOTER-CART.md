@@ -1,6 +1,6 @@
-# Footer & Cart Copy — Floki
+# Footer & Cart Copy   Floki
 
-*Status: DRAFT — ready for review*
+*Status: DRAFT   ready for review*
 
 ---
 
