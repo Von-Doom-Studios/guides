@@ -1,6 +1,6 @@
-# Contact Page Copy — Floki (/contact)
+# Contact Page Copy   Floki (/contact)
 
-*Status: DRAFT — ready for review*
+*Status: DRAFT   ready for review*
 
 ---
 
@@ -9,7 +9,7 @@
 | Field | Copy |
 |---|---|
 | Page headline | Get in touch. |
-| Intro text | Questions about an order, a product, or outfitting a property — we're here. |
+| Intro text | Questions about an order, a product, or outfitting a property   we're here. |
 | Submit button label | Send Message |
 
 ---
