@@ -1,6 +1,6 @@
-# FAQ Page Copy — Floki (/faq)
+# FAQ Page Copy   Floki (/faq)
 
-*Status: DRAFT — ready for review*
+*Status: DRAFT   ready for review*
 
 ---
 
@@ -10,7 +10,7 @@
 Most orders ship within 1–2 business days and arrive within 3–5 business days via standard shipping. You'll receive a tracking number as soon as your order is on its way.
 
 **Do you ship internationally?**
-Not yet — we currently ship within the US. International shipping is coming. If you're outside the US, email us at shopflokibrands@gmail.com and we'll let you know when your region is available.
+Not yet   we currently ship within the US. International shipping is coming. If you're outside the US, email us at shopflokibrands@gmail.com and we'll let you know when your region is available.
 
 **Can I change or cancel my order?**
 If your order hasn't shipped yet, contact us and we'll do our best to accommodate the change. Once it's shipped, we're unable to modify it.
@@ -48,14 +48,14 @@ The pillow cover can be removed and hand-washed in cold water. Do not machine wa
 The sneaker cases are built with impact-resistant material and provide protection from everyday drops. They are not rated for extreme impact.
 
 **Do the hanger colors fade over time?**
-No — the dye is set into the weave and holds well with normal use and care. Avoid prolonged exposure to direct sunlight.
+No   the dye is set into the weave and holds well with normal use and care. Avoid prolonged exposure to direct sunlight.
 
 ---
 
 ## About Floki
 
 **What is Floki?**
-Floki is a modern lifestyle brand making premium products for the home and wardrobe — inspired by decades of travel through the world's finest spaces, and built to bring that standard to everyone.
+Floki is a modern lifestyle brand making premium products for the home and wardrobe   inspired by decades of travel through the world's finest spaces, and built to bring that standard to everyone.
 
 **Where are your products made?**
 Our products are crafted with care and sourced from quality materials. For specific sourcing details, email us at shopflokibrands@gmail.com.
