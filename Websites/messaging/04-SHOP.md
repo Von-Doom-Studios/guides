@@ -1,6 +1,6 @@
-# Shop Page Copy — Floki
+# Shop Page Copy   Floki
 
-*Status: DRAFT — ready for review*
+*Status: DRAFT   ready for review*
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## Product Descriptions
 
-### Woven Hangers (all colorways — same core description)
+### Woven Hangers (all colorways   same core description)
 
 **Ruby Red**
 Crafted with high-quality nylon on a premium metal frame, it offers the perfect blend of style and durability. The smooth nylon surface ensures your clothing stays in place, making it ideal for all types of garments. Elevate your wardrobe organization with this sleek and modern essential. Available in a bold ruby red finish.
