@@ -15,23 +15,23 @@
 
 ## Image + Text Blocks
 
-### Block 1 — The Standard
+### Block 1 — The Origin
 | Field | Copy |
 |---|---|
-| Heading | The standard behind everything we make. |
-| Body | Floki started with a simple conviction: the products in your space should be as considered as the space itself. Every hanger, pillow, and case we make is held to that standard — in material, in craft, and in finish. |
+| Heading | Born from a life spent in remarkable places. |
+| Body | Floki began with a conviction that came from years of travel — through boutique hotels in Marrakech, design studios in Milan, and penthouse suites in New York. In each of these places, the same truth held: the products that fill a space either honor it or diminish it. There is no middle ground. Floki was built to be the former. |
 
-### Block 2 — Who It's For
+### Block 2 — The Mission
 | Field | Copy |
 |---|---|
-| Heading | For the home. For the hotel. For anyone who cares. |
-| Body | Our products are used by individuals who want their wardrobe to feel right, and by hotels and boutique properties that want every room to feel intentional. The same standard applies to both. We make one version — the good one. |
+| Heading | World-class aesthetics. Accessible to everyone. |
+| Body | For decades, exceptional design has lived behind velvet ropes — in luxury hotels, in high-end showrooms, in spaces most people only see in photographs. Floki was created to change that. Every product we make is designed to bring the same considered quality found in the world's finest spaces into the homes, wardrobes, and everyday lives of people who know what good looks like. |
 
-### Block 3 — The Products
+### Block 3 — The Standard
 | Field | Copy |
 |---|---|
-| Heading | Three products. One standard. |
-| Body | Woven hangers, African print accent pillows, and sneaker phone cases. Each one is designed to fit into a well-considered space — not as decoration, but as a working part of it. |
+| Heading | Inspired by everywhere. Made for anywhere. |
+| Body | From the textile markets of West Africa to the minimalist interiors of Scandinavian design hotels, Floki draws from a wide creative world. The result is a product line that feels at home in a New York apartment, a Lagos living room, or a boutique hotel suite in Paris. The inspiration is global. The standard is singular. |
 
 ---
 
@@ -39,8 +39,8 @@
 
 | Field | Copy |
 |---|---|
-| Section heading | The people behind Floki. |
-| Team intro | Floki is built by a small team with high standards and a deep belief that everyday objects should be worth owning. |
+| Section heading | The mission behind the brand. |
+| Team intro | Floki is built by a team of designers and creatives who have spent their careers moving through the world's finest spaces — and asking the same question: why can't everyone live like this? That question is the brand. These products are the answer. |
 
 ---
 
@@ -49,9 +49,9 @@
 | Field | Copy |
 |---|---|
 | Section heading | Outfitting hotels and boutique properties. |
-| Body | Floki products are used in hospitality spaces across the country. If you're outfitting rooms, suites, or common areas, we work with hotels, FF&E buyers, and short-term rental operators on volume orders. |
+| Body | Floki products are used in hospitality spaces that care about every detail. If you're outfitting hotel rooms, suites, short-term rentals, or common areas, we work with FF&E buyers and property operators on volume orders — with the same quality and attention to detail you'll find in every retail piece. |
 | CTA label | Inquire about trade pricing |
-| CTA destination | /contact (with subject pre-filled: "Trade Inquiry") |
+| CTA destination | /contact (subject pre-filled: "Trade Inquiry") |
 
 ---
 
