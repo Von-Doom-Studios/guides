@@ -1,6 +1,20 @@
 # Brand Voice — Floki
 
-This document defines how Floki communicates. It applies to the website, social media, email, ads, and any other customer-facing content.
+This document defines how Floki communicates across all channels.
+
+---
+
+## Thesis
+
+**"Designed for spaces that demand more."**
+
+Every piece of copy — from a hero headline to an email subject line — should feel like it earns that line. Premium without arrogance. Confident without noise.
+
+---
+
+## Brand Origin (for copy context)
+
+Floki was built by a team of designers and creatives shaped by decades of travel through remarkable spaces. The conviction is that world-class aesthetics shouldn't live behind velvet ropes. The brand exists to bring the same standard found in the world's finest hotels and interiors into everyday homes and wardrobes.
 
 ---
 
@@ -25,7 +39,9 @@ Floki is not a discount brand. The copy should feel like the product looks — c
 
 ## Target Customer
 
-Style-conscious, quality-aware. Ages 25–45. They notice details. They buy things once and buy them right.
+**DTC individual:** Style-conscious, quality-aware. Ages 25–45. Notices details. Buys things once and buys them right.
+
+**Trade / B2B:** Hotel operators, FF&E buyers, boutique property owners. They need to feel confident in the quality before they pick up the phone. The site copy does that work without ever feeling like a brochure.
 
 ---
 
@@ -36,6 +52,7 @@ Style-conscious, quality-aware. Ages 25–45. They notice details. They buy thin
 | "Elevate your home with our amazing hangers!" | "Crafted to last. Designed to be seen." |
 | "Truly incredible quality you'll love" | "Woven by hand. Built for the long term." |
 | "Shop now and transform your space!" | "The Collection" |
+| "Perfect for hotels and homes alike!" | "From a private wardrobe to a boutique hotel suite." |
 
 ---
 
@@ -48,3 +65,5 @@ Style-conscious, quality-aware. Ages 25–45. They notice details. They buy thin
 **Email:** Direct and personal. Subject lines under 8 words. Body copy under 150 words for campaigns.
 
 **Ads:** 3–6 words max for headlines. Benefit-led, not hype-led.
+
+**Trade / B2B outreach:** Professional but not stiff. One clear ask. No deck language.
