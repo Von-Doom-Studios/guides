@@ -39,7 +39,7 @@
 
 | Field | Copy |
 |---|---|
-| Email | [email address TBD] |
+| Email | shopflokibrands@gmail.com |
 | Response time | We respond within 1–2 business days. |
 | Trade note | Outfitting a hotel or buying in volume? Select "Trade & wholesale inquiry" in the subject line and we'll get back to you with pricing and options. |
 
