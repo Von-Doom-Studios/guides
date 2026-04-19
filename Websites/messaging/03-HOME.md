@@ -1,6 +1,6 @@
-# Home Page Copy — Floki
+# Home Page Copy   Floki
 
-*Status: DRAFT — ready for review*
+*Status: DRAFT   ready for review*
 *Thesis: "Designed for spaces that demand more."*
 *Audience: Individuals (DTC) + Trade/B2B signal embedded*
 
@@ -18,21 +18,21 @@
 
 ## Hero Slider
 
-### Slide 1 — Woven Hanger
+### Slide 1   Woven Hanger
 | Field | Copy |
 |---|---|
 | Headline | Crafted to be seen. |
 | Supporting text | Luxury woven hangers built for the wardrobe you've worked for. |
 | Button label | Shop Hangers |
 
-### Slide 2 — Sneaker Cases
+### Slide 2   Sneaker Cases
 | Field | Copy |
 |---|---|
 | Headline | Your collection, protected. |
 | Supporting text | Premium cases for the sneakers worth keeping. |
 | Button label | Shop Cases |
 
-### Slide 3 — Brand / Lifestyle
+### Slide 3   Brand / Lifestyle
 | Field | Copy |
 |---|---|
 | Headline | Designed for spaces that demand more. |
@@ -41,7 +41,7 @@
 
 ---
 
-## Featured Product Section — Woven Hanger
+## Featured Product Section   Woven Hanger
 
 | Field | Copy |
 |---|---|
@@ -72,7 +72,7 @@
 
 ---
 
-## Video Section — Woven Hanger
+## Video Section   Woven Hanger
 
 | Field | Copy |
 |---|---|
