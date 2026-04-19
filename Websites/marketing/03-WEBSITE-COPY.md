@@ -4,6 +4,7 @@ Working document tracking all Floki website copy. Full copy files live in `Websi
 
 **Thesis:** *"Designed for spaces that demand more."*
 **Dual audience:** Individual buyers (DTC) + Trade/B2B (hotels, FF&E, STR operators)
+**Contact email:** shopflokibrands@gmail.com
 
 **Status key:**
 - `[ NEEDED ]` — not yet written
@@ -22,13 +23,13 @@ Working document tracking all Floki website copy. Full copy files live in `Websi
 | FAQ | `Websites/messaging/06-FAQ.md` | `[ DRAFT ]` |
 | Contact | `Websites/messaging/07-CONTACT.md` | `[ DRAFT ]` |
 | Footer + Cart | `Websites/messaging/08-FOOTER-CART.md` | `[ DRAFT ]` |
-| Policy Pages | — | `[ NEEDED — legal review required ]` |
+| Policy Pages | `Websites/messaging/09-POLICIES.md` | `[ DRAFT — pending legal review ]` |
+
+**All pages drafted. Ready for Anthony's review before dev handoff.**
 
 ---
 
-## B2B / Trade Touch Points (embedded across site)
-
-These are the moments where the site signals to hotel buyers and trade professionals without alienating individual buyers:
+## B2B / Trade Touch Points
 
 | Location | Copy | Status |
 |---|---|---|
@@ -42,12 +43,11 @@ These are the moments where the site signals to hotel buyers and trade professio
 
 ---
 
-## Items Still Needed
+## Remaining Items
 
-- [ ] Policy pages (Terms, Privacy, Refund) — legal review recommended
-- [ ] Actual contact email address — placeholder in FAQ and Contact
-- [ ] Team bios for Our Story — need names and info from Anthony
-- [ ] Trade pricing / inquiry process — coordinate with VD-Ops
+- [ ] Anthony reviews all DRAFT pages and approves or marks for revision
+- [ ] Policy pages — send to lawyer before publishing
+- [ ] Dev handoff — post approved pages in #dev
 
 ---
 
