@@ -1,6 +1,6 @@
-# Getting Started — Floki Website Messaging
+# Getting Started   Floki Website Messaging
 
-Welcome to the Floki website messaging system. This folder contains the copy structure for every page on the site — broken down section by section so the marketing team knows exactly what needs to be written and where it lives.
+Welcome to the Floki website messaging system. This folder contains the copy structure for every page on the site   broken down section by section so the marketing team knows exactly what needs to be written and where it lives.
 
 ---
 
@@ -14,7 +14,7 @@ The VD-Marketing agent and anyone writing or reviewing copy for the Floki websit
 
 | File | What It Covers |
 |---|---|
-| [02-MESSAGING-MAP.md](./02-MESSAGING-MAP.md) | Every page and section that needs copy — the master structure |
+| [02-MESSAGING-MAP.md](./02-MESSAGING-MAP.md) | Every page and section that needs copy   the master structure |
 | `03-HOME.md` *(to be created)* | Final approved copy for the home page |
 | `04-SHOP.md` *(to be created)* | Final approved copy for the shop/collection pages |
 | `05-EXPLORE.md` *(to be created)* | Final approved copy for the Our Story page |
