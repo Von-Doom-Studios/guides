@@ -21,17 +21,17 @@ The Sales team operates from `/Websites/sales/`. That folder handles prospects, 
 
 | File | Purpose |
 |------|---------|
-| [00-GETTING-STARTED.md](./00-GETTING-STARTED.md) | This file. Overview, folder map, ground rules. |
-| [01-BRAND-THESIS.md](./01-BRAND-THESIS.md) | The full brand conviction. Why Floki exists, the founding observation, the product philosophy, the hospitality loop, the cultural dimension. Start here. |
-| [02-POSITIONING.md](./02-POSITIONING.md) | Where Floki sits in the market. Competitive landscape by category, what we own, the pricing architecture as brand strategy. |
-| [03-AUDIENCE-DTC.md](./03-AUDIENCE-DTC.md) | DTC buyer profiles: the Considerate Buyer and the Diaspora Consumer. |
-| [04-AUDIENCE-TRADE.md](./04-AUDIENCE-TRADE.md) | Trade/B2B buyer profiles: FF&E firms, hotels, STR operators, boutique retail, personal stylists. |
-| [05-BRAND-VOICE.md](./05-BRAND-VOICE.md) | How Floki communicates. The rules, DTC vs trade voice, per-product voice notes, examples. |
-| [06-VISUAL-IDENTITY.md](./06-VISUAL-IDENTITY.md) | The three visual pillars, asset briefs, design-marketing handoff process, active brief tracker. |
-| [07-CAMPAIGNS.md](./07-CAMPAIGNS.md) | Active, planned, and completed campaigns. Template + launch campaign briefs. |
-| [08-CONTENT-STRATEGY.md](./08-CONTENT-STRATEGY.md) | Content pillars, formats by channel, cadence, production workflow. |
-| [09-CHANNELS.md](./09-CHANNELS.md) | Channel-by-channel strategy: Instagram, TikTok, Email, Pinterest, Paid Meta, LinkedIn. |
-| [10-ANALYTICS.md](./10-ANALYTICS.md) | North star metrics, KPIs by channel, brand health signals, reporting cadence. |
+| [00-GETTING-STARTED.md](./00-GETTING-STARTED.md) | This file. Folder map and ground rules. |
+| [01-BRAND-THESIS.md](./01-BRAND-THESIS.md) | Full brand conviction. Why Floki exists. Start here. |
+| [02-POSITIONING.md](./02-POSITIONING.md) | Market position, competitive landscape, pricing architecture. |
+| [03-AUDIENCE-DTC.md](./03-AUDIENCE-DTC.md) | DTC buyer profiles: Considerate Buyer and Diaspora Consumer. |
+| [04-AUDIENCE-TRADE.md](./04-AUDIENCE-TRADE.md) | Trade profiles: FF&E, hotels, STR, boutique retail, stylists. |
+| [05-BRAND-VOICE.md](./05-BRAND-VOICE.md) | Voice rules, DTC vs trade tone, per-product examples. |
+| [06-VISUAL-IDENTITY.md](./06-VISUAL-IDENTITY.md) | Three visual pillars, asset briefs, brief tracker. |
+| [07-CAMPAIGNS.md](./07-CAMPAIGNS.md) | Active, planned, and completed campaigns. |
+| [08-CONTENT-STRATEGY.md](./08-CONTENT-STRATEGY.md) | Content pillars, formats, cadence, production workflow. |
+| [09-CHANNELS.md](./09-CHANNELS.md) | Instagram, TikTok, Email, Pinterest, Paid Meta, LinkedIn. |
+| [10-ANALYTICS.md](./10-ANALYTICS.md) | KPIs, brand health signals, reporting cadence. |
 
 ---
 
