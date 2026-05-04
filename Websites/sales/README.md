@@ -27,5 +27,5 @@ Start with [01-GETTING-STARTED.md](./01-GETTING-STARTED.md).
 
 ---
 
-**Sales Owner:** Tachikoma
+**Sales Owner:** VD-Growth
 **Last overhauled:** May 2026
