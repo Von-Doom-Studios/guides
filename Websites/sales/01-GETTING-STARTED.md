@@ -2,7 +2,7 @@
 
 This folder is the operating manual for all Floki Brands sales activity. Every prospect, pipeline stage, outreach template, wholesale term, partnership, and revenue projection lives here. If you are new to this system, read this file first.
 
-**Sales Owner:** VD-Growth  
+**Sales Owner:** VD-Sales  
 **Outreach Email:** shopflokibrands@gmail.com  
 **Website:** https://floki-website.vercel.app  
 **Repo:** /ecommerce-brands/Websites/sales/
@@ -55,7 +55,7 @@ shopflokibrands@gmail.com is the single sender address. Do not mix personal or a
 Use hyphens or rewrite the sentence. This applies to emails, line sheets, proposals, and any customer-facing document.
 
 **5. Escalation rule.**  
-Orders under $2,000: VD-Growth handles. Orders $2,000+: escalate to Anthony for negotiation sign-off.
+Orders under $2,000: VD-Sales handles. Orders $2,000+: escalate to Anthony for negotiation sign-off.
 
 **6. Update the pipeline after every touchpoint.**  
 If an email goes out, update [06-PIPELINE.md](./06-PIPELINE.md). If a prospect responds, update. If a deal closes, update. Real-time data beats end-of-week recaps.

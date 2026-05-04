@@ -99,7 +99,7 @@ DTC requires marketing spend, ad creative, SEO, and customer acquisition infrast
 - Launch personal stylist referral program (Template 6, $9 trade + 15-20% commission)
 
 ### Phase 1 Team
-- VD-Growth: Pipeline management, outreach execution, CRM hygiene
+- VD-Sales: Pipeline management, outreach execution, CRM hygiene
 - VD-Ops: Email sending, CRM data entry, sample kit shipping coordination
 - Anthony: Deal sign-off above $2,000, website readiness confirmation
 
