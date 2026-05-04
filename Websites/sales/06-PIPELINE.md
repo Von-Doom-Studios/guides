@@ -2,7 +2,7 @@
 
 Live deal tracker with lead scoring criteria, conversion rate benchmarks by channel, and automated stage transitions via HubSpot CRM.
 
-**Pipeline owner:** VD-Growth (Tachikoma)  
+**Pipeline owner:** Tachikoma  
 **CRM:** HubSpot Free  
 **Related files:** [05-PROSPECTS.md](./05-PROSPECTS.md) | [07-OUTREACH-STRATEGY.md](./07-OUTREACH-STRATEGY.md) | [14-ANALYTICS-AND-REPORTING.md](./14-ANALYTICS-AND-REPORTING.md)
 

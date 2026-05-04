@@ -193,8 +193,8 @@ For new boutique retail accounts where Net-30 payment is not yet established.
 
 | Order Value | Handler | Process |
 |------------|---------|---------|
-| Under $500 | VD-Growth | Handle independently, confirm in HubSpot |
-| $500-$2,000 | VD-Growth | Handle, notify Anthony via Discord |
+| Under $500 | Tachikoma | Handle independently, confirm in HubSpot |
+| $500-$2,000 | Tachikoma | Handle, notify Anthony via Discord |
 | $2,000+ | Anthony | Do not confirm pricing until Anthony reviews |
 | Custom pricing request | Anthony | Any request to go below floor price ($3.75/unit) |
 | Payment terms beyond Net-30 | Anthony | Net-45 or Net-60 requests need sign-off |
