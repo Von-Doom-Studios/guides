@@ -119,4 +119,4 @@ Each product asks the same question: what happens when you treat a functional ob
 
 ---
 
-*Owned by VD-Marketing. See also: [01-BRAND-THESIS.md](./01-BRAND-THESIS.md) | [03-AUDIENCE.md](./03-AUDIENCE.md) | [04-BRAND-VOICE.md](./04-BRAND-VOICE.md)*
+*Owned by VD-Marketing. See also: [01-BRAND-THESIS.md](./01-BRAND-THESIS.md) | [03-AUDIENCE-DTC.md](./03-AUDIENCE-DTC.md) | [04-AUDIENCE-TRADE.md](./04-AUDIENCE-TRADE.md) | [05-BRAND-VOICE.md](./05-BRAND-VOICE.md)*
